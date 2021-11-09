@@ -1,5 +1,5 @@
 data/
-
+*.sqlite
 
 #*******************Latex Ignore*******************
 ## Core latex/pdflatex auxiliary files:
