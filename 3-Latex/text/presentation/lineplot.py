@@ -49,7 +49,7 @@ stocks["CumReturn"] = (1 + stocks["DailyReturn"]).groupby(stocks["Stock"]).cumpr
 
 # %%
 sns.reset_orig() # reset sns settings (if sns.set changed default)
-sns.set(font_scale=1.5, style="whitegrid") # increase all fonts
+sns.set(style="whitegrid") # increase all fonts
 # sns.set(rc={"axes.grid": True}) # show grid on y and x axis
 fig, ax = plt.subplots(figsize = (10, 6))
 sns.lineplot(data=stocks, x="Date", y="CumReturn", 
@@ -58,7 +58,7 @@ hue="Stock", style="Stock", size="Stock", palette="colorblind", dashes=True)
 # the data.  Using redundant semantics (i.e. both hue and style for the same variable) 
 # can be helpful for making graphics more accessible.
 # plt.legend(title="Stocks")
-plt.title("Cumulative Returns FAANG stocks")
+# plt.title("Cumulative Returns FAANG stocks")
 plt.ylabel("Cumulative Returns")
 plt.xlabel(None)
 ax.grid(axis="x") # axis to activate BUT if sns.set used: axis to deactive.

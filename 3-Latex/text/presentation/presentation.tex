@@ -11,6 +11,12 @@
 \graphicspath{{../figures/}}
 % \usepackage{hyperref} %already loaded by beamer document class
 \usepackage{blindtext} % to generate 2 pages of text
+\usepackage{booktabs} % nicer tables w/ mid, top, bottom rules
+\usepackage{dcolumn} % should align decimals in tables
+\newcolumntype{d}[1]{D{.}{.}{#1}} % command for dcolumn, use d{2} instead of l,
+% or c in tabular column specifier
+
+ 
 
 % Dont use caption/ subcaption in beamer, use columns instead.
 \usepackage[compatibility=false]{caption} % for subfigures (panels)
@@ -29,7 +35,7 @@
 
 
 % Title
-\title{Presentation title}
+\title{DTFF Final Project Presentation}
 
 % \author[test]{Egemen Erdogdu\thanks{Egemen Erdogdu, University of Zurich, Rämistrasse 71, 8006 Zürich} \and Jonas Schmidiger\thanks{Jonas Schmidiger, University of Zurich, Rämistrasse 71, 8006 Zürich} \and Mathias Ruoss\thanks{Mathias Ruoss, University of Zurich, Rämistrasse 71, 8006 Zürich}}
 \author[E. Erdogdu, J. Schmidiger, M. Ruoss] % (optional, for multiple authors)
@@ -51,8 +57,14 @@
 }
 \date{\today}
 
+\AtBeginSection[ ]
+{
+\begin{frame}{Outline}
+    \tableofcontents[currentsection]
+\end{frame}
+}
 
-% \usetheme[]{Warsaw}
+\usetheme{Madrid}
 % \usecolortheme{orchid}
 
 % ***********************************************
@@ -60,13 +72,20 @@
 
 \frame{\titlepage}
 
-% % Table of Contents
-% \begin{frame}
-%     \frametitle{Table of Contents}
-%     \tableofcontents    
-% \end{frame}
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
 
-% \section{Section 1}
+\section{Introduction}
+\begin{frame}{Introduction}
+  \begin{itemize}
+    \item Is there a simple trading strategy that outperforms Buy\&Hold by 10x?
+    \item As we found out, yes!
+    \item To sum up: there was never a easier strategy than that one.
+  \end{itemize}
+\end{frame}
+
+\section{Background}
 \begin{frame}
     \frametitle{A theorem}
     \framesubtitle{Frame subtitle}
@@ -75,7 +94,6 @@
     \end{theorem}
 \end{frame}
 
-% \section{Section 2}
 \begin{frame}
     \frametitle{Some equations}
     \framesubtitle{Frame subtitle}
@@ -88,7 +106,28 @@
     % \end{equation}
 \end{frame}
 
-% \section{Section 3}
+\section{Dataset}
+% Exercise 1 of lecture 6-Visualization
+\begin{frame}
+  \frametitle{A table with the package \texttt{dcolumn}}
+\begin{table}[]
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{@{}ld{3}d{3}d{3}d{3}d{3}d{3}@{}}
+  \toprule
+  \multicolumn{1}{l}{Stock}       & \multicolumn{1}{c}{FB} & \multicolumn{1}{c}{AMZN} & \multicolumn{1}{c}{AAPL} & \multicolumn{1}{c}{NFLX} & \multicolumn{1}{c}{GOOGL} &  \\ \midrule
+  Panel A: Descriptive statistics &        &        &        &        &        &  \\ \midrule
+  Mean                            & 0.083  & 0.065  & 0.112  & 0.051  & 0.091  &  \\
+  Variance                        & 0.041  & 0.030  & 0.044  & 0.061  & 0.037  &  \\
+  Median                          & 0.064  & 0.058  & 0.091  & 0.043  & 0.102  &  \\
+  Maximum                         & 0.053  & 0.064  & 0.078  & 0.043  & 0.062  &  \\
+  Minimum                         & -0.211 & -0.181 & -0.195 & -0.203 & -0.081 &  \\
+  Jarque Bera                     & 95.35   & 81.54   & 49.27   & 40.58   & 0.58   &  \\ \bottomrule
+  \end{tabular}
+  }
+  \end{table}
+\end{frame}
+
+
 \begin{frame}
     \frametitle{A figure with two panels}
     \framesubtitle{A Subtitle}
@@ -111,7 +150,6 @@
     \end{figure}
 \end{frame}
 
-
 \begin{frame}
     \frametitle{Another figure with two panels aligned}
     \framesubtitle{Another subtitle}
@@ -125,28 +163,43 @@
     \end{figure}        
 \end{frame}
 
-% \begin{frame}
-%     \frametitle{Another figure with two panels}
-%     \framesubtitle{Frame subtitle}
-%     \begin{figure}
-%         % \setbeamerfont{caption}{size=\footnotesize}
-%         \begin{columns}[onlytextwidth]
-%             \begin{column}{.45\textwidth}
-%                 \centering
-%                 % Figures taken from igors github
-%                 \begin{figure}
-%                     \includegraphics[height=0.5\textheight,width=\linewidth,keepaspectratio]{stock-index-weird-plot}
-%                     \caption{First subfigure}
-%                 \end{figure}
-%             \end{column}
-%             \begin{column}{.45\textwidth}
-%                 \centering
-%                 \includegraphics[height=0.5\textheight,width=\linewidth,keepaspectratio]{beta-vs-mu.png}
-%                 \caption{Second subfigure}
-%             \end{column}    
-%         \end{columns}   
-%         % \caption{Two panels side by side}
-%     \end{figure}
-% \end{frame}
+% Exercise 2, table as heatmap
+\section{Results}
+\begin{frame}
+    \frametitle{A table as a heatmap}
+    % \framesubtitle{Another subtitle}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\linewidth]{heatmap.png}
+      % \caption{heatmap of returns}    
+    \end{figure}        
+\end{frame}
+
+
+% Exercise 3, line plot with color friendly palette -> see code in "lineplot.py"
+% we used the option palette="colorblind" in seaborn, a python package
+\begin{frame}
+  \frametitle{A table as a lineplot}
+  % \framesubtitle{Another subtitle}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{lineplot_beamer}
+    % \caption{heatmap of returns}    
+  \end{figure}        
+\end{frame}
+
+% Answer exercise 4:
+% Grids could be pre-attentive, as the human brain learns spatial information
+% from it. It also could be a learned pattern, e.g. through our school system, as we 
+% learn how to read and write on sheets with horizontal and vertical grids.
+\section{Conclusion}
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item New approach to construting a trading strategy that outperforms B\&H by 10x
+    \item Could be used for all kinds of assets
+    \item Further research should be done, as our study has limitations (high max. DD!)
+  \end{itemize}
+\end{frame}
+\section*{References}
 
 \end{document}
