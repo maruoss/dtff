@@ -6,7 +6,7 @@ from fredapi import Fred
 
 # Source https://lvngd.com/blog/fred-api-python/
 individual_fred_key = "abc123" # fake api key
-#individual_fred_key = os.environ['fredApiKey'] # valid api key
+#individual_fred_key = os.environ['FRED_API_KEY'] # valid api key
 
 # Answer Question 2
 ROOT_URL = "https://api.stlouisfed.org"
