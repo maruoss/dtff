@@ -1,4 +1,4 @@
-# Digital tools for finance
+# Digital Tools for Finance
 
 Group repository for the elective quantitative finance course from the University of Zurich, taught by Igor Pozdeev (Fall Semester 2021). Official lecture notes are hosted on the [digital-tools-for-finance repository](https://github.com/ipozdeev/digital-tools-for-finance). Group of Egemen Erdogdu, Jonas Schmidiger and Mathias Ruoss.
 
