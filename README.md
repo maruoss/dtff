@@ -1,18 +1,23 @@
-# Digital Tools for Finance Project
+# Digital tools for finance
 
-Demo group work for testing / demonstrating collaboration in a research project 
+Group repository for the elective quantitative finance course from the University of Zurich, taught by Igor Pozdeev (Fall Semester 2021). Official lecture notes are hosted on the [digital-tools-for-finance repository](https://github.com/ipozdeev/digital-tools-for-finance). Group of Egemen Erdogdu, Jonas Schmidiger and Mathias Ruoss.
 
-## About
+## midterm
+The midterm involves all the end of chapter exercises from the digital tools for finance repository. All of our solutions can be found on the [course branch](https://github.com/maruoss/dtff-project/tree/main).
 
-The project is part of our group work assignment for the course "Digital Tools for Finance" taught by Igor Pozdeev at the University of Zurich. It covers the end of chapter exercises featured in the course repository: \
-https://github.com/ipozdeev/digital-tools-for-finance
+## assignment
 
-The course's objective is to aquire the competences needed to collaborate efficiently in a modern research project. Thefore, this repository can be seen as a testing area to aquire these skills and experiment with different tools for data management, scientific writing and graphical representation of results. 
+In accordance with the final assignment [requirements](https://github.com/ipozdeev/digital-tools-for-finance#assignment), our project:
 
-## Contact
-Feel free to contact us if any questions arise:
+1. is hosted as a single [repository](https://github.com/maruoss/dtff-project/tree/final-project) on github.
 
-egemen.erdogdu@uzh.ch \
-jonaslenz.schmidiger@uzh.ch \
-mathias.ruoss@uzh.ch 
+2. has a concise structure similar to the lecture repository.
+
+3. has a [history](https://github.com/maruoss/dtff-project/commits/final-project) of commits and mergers. 
+
+4. boasts a database with an API and possibility to update data under [here](https://github.com/maruoss/dtff-project/tree/final-project/Data%20Management).
+
+5+6+7. features a [paper](https://github.com/maruoss/dtff-project/tree/final-project/Latex/text/paper) and [beamer presentation](https://github.com/maruoss/dtff-project/tree/final-project/Latex/text/presentation) written in LaTex, with [figures](https://github.com/maruoss/dtff-project/tree/final-project/Latex/text/figures) following the discussed visualization standards. 
+
+8. has an interactive [R shiny app](https://github.com/maruoss/dtff-project/tree/final-project/Interactive%20App), which presents the price chart of a selected stock. 
 
